@@ -26,11 +26,14 @@ pipeline:
                   spec:
                     shell: Sh
                     command: |-
+                      docker build -f Dockerfile -t ${IMAGE_NAME} .
+                      docker images
                       apt update && apt install -y curl
                       curl -sfL 'https://raw.githubusercontent.com/orcasecurity/orca-cli/main/install.sh' | bash
-                      orca-cli -p "orca-project-for-harness-builds" image scan "ubuntu-latest"
+                      orca-cli -p "orca-project-for-harness-builds" image scan "${IMAGE_NAME}"
                     envVariables:
                       ORCA_SECURITY_API_TOKEN: aHR0cHM6Ly9hcHAudXMub3JjYXNlY3VyaXR5LmlvfHxTYzlvWDB3c0Z1cEp6WlBRYm1BN3hBZjBGVWdYaHh2eQ==
+                      IMAGE_NAME: my-risky-container
           platform:
             os: Linux
             arch: Amd64
