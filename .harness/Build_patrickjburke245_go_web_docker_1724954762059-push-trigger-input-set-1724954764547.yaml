@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_patrickjburke245_go_web_docker_1724954762059-push-trigger-input-set
+  identifier: Build_patrickjburke245_go_web_docker_1724954762059pushtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: orcaprotectedharnessproject
+  pipeline:
+    identifier: Build_patrickjburke245_go_web_docker_1724954762059
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
