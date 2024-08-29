@@ -1,0 +1,33 @@
+pipeline:
+  name: Build go-web-docker
+  identifier: Build_patrickjburke245_go_web_docker_1724954762059
+  projectIdentifier: orcaprotectedharnessproject
+  orgIdentifier: default
+  stages:
+    - stage:
+        name: Build
+        identifier: Build
+        type: CI
+        spec:
+          cloneCodebase: true
+          execution:
+            steps:
+              - step:
+                  type: Run
+                  name: Echo Welcome Message
+                  identifier: Echo_Welcome_Message
+                  spec:
+                    shell: Sh
+                    command: echo "Welcome to Harness CI"
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: account.Github
+        repoName: patrickjburke245/go-web-docker
+        build: <+input>
