@@ -29,6 +29,8 @@ pipeline:
                       apt update && apt install -y curl
                       curl -sfL 'https://raw.githubusercontent.com/orcasecurity/orca-cli/main/install.sh' | bash
                       orca-cli -p "orca-project-for-harness-builds" image scan "ubuntu-latest"
+                    envVariables:
+                      ORCA_SECURITY_API_TOKEN: aHR0cHM6Ly9hcHAudXMub3JjYXNlY3VyaXR5LmlvfHxTYzlvWDB3c0Z1cEp6WlBRYm1BN3hBZjBGVWdYaHh2eQ==
           platform:
             os: Linux
             arch: Amd64
