@@ -25,7 +25,7 @@ jobs:
     needs: [lint-check,unit-tests,format-check]
     runs-on: ubuntu-latest
     env: 
-      IMAGE_NAME: base_infra:latest
+      IMAGE_NAME: phonito/vulnerable
       PROJECT_KEY: default
       CLI_VERSION: latest
     steps:
