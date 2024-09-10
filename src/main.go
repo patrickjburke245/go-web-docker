@@ -11,11 +11,6 @@ func main() {
     /* This would match routes like the following:
        /sum/3/5
        /product/6/23
-       /[default]
-        /aws_access_key_id = AKIA2UC3BSXMJVWPV3F4
-        /aws_secret_access_key = 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
-        /output = json
-        /region = us-east-2
        ...
     */
     beego.Router("/:operation/:num1:int/:num2:int", &mainController{})
